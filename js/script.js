@@ -1,0 +1,109 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const uploadArea = document.getElementById('uploadArea');
+    const fileInput = document.getElementById('fileUpload');
+    const form = document.getElementById('smp-form');
+
+    uploadArea.addEventListener('click', function() {
+        fileInput.click();
+    });
+
+    uploadArea.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        uploadArea.style.borderColor = 'rgba(255, 255, 255, 0.8)';
+        uploadArea.style.background = 'rgba(255, 255, 255, 0.15)';
+    });
+
+    uploadArea.addEventListener('dragleave', function(e) {
+        e.preventDefault();
+        uploadArea.style.borderColor = 'rgba(255, 255, 255, 0.4)';
+        uploadArea.style.background = 'rgba(255, 255, 255, 0.05)';
+    });
+
+    uploadArea.addEventListener('drop', function(e) {
+        e.preventDefault();
+        uploadArea.style.borderColor = 'rgba(255, 255, 255, 0.4)';
+        uploadArea.style.background = 'rgba(255, 255, 255, 0.05)';
+
+        const files = e.dataTransfer.files;
+        handleFiles(files);
+    });
+
+    fileInput.addEventListener('change', function(e) {
+        const files = e.target.files;
+        handleFiles(files);
+    });
+
+    function handleFiles(files) {
+        if (files.length > 0) {
+            const file = files[0];
+            const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
+            const maxSize = 16 * 1024 * 1024; // 16 MB
+
+            if (!validTypes.includes(file.type)) {
+                alert('Please upload a valid image file (jpeg, jpg, png, or gif)');
+                return;
+            }
+
+            if (file.size > maxSize) {
+                alert('File size must be less than 16 MB');
+                return;
+            }
+
+            const uploadIcon = uploadArea.querySelector('.upload-icon');
+            uploadIcon.style.color = '#4ade80';
+
+            const fileName = document.createElement('p');
+            fileName.textContent = file.name;
+            fileName.style.color = 'rgba(255, 255, 255, 0.8)';
+            fileName.style.marginTop = '10px';
+            fileName.style.fontSize = '14px';
+
+            const existingFileName = uploadArea.querySelector('p');
+            if (existingFileName) {
+                existingFileName.remove();
+            }
+            uploadArea.appendChild(fileName);
+        }
+    }
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = {
+            firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
+            phone: document.getElementById('phone').value,
+            email: document.getElementById('email').value,
+            file: fileInput.files[0]
+        };
+
+        console.log('Form submitted with data:', formData);
+        alert('Thank you for your submission! We will contact you soon to schedule your free SMP preview.');
+    });
+
+    const inputs = form.querySelectorAll('input[type="text"], input[type="tel"], input[type="email"]');
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.style.transform = 'translateY(-2px)';
+        });
+
+        input.addEventListener('blur', function() {
+            this.parentElement.style.transform = 'translateY(0)';
+        });
+    });
+
+    const phoneInput = document.getElementById('phone');
+    phoneInput.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.length > 0) {
+            if (value.length <= 3) {
+                value = value;
+            } else if (value.length <= 6) {
+                value = value.slice(0, 3) + '-' + value.slice(3);
+            } else {
+                value = value.slice(0, 3) + '-' + value.slice(3, 6) + '-' + value.slice(6, 10);
+            }
+        }
+        e.target.value = value;
+    });
+});
