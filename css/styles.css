@@ -832,6 +832,121 @@ h1 {
     text-decoration: underline;
 }
 
+/* FAQ Section */
+.faq-section {
+    background: white;
+    padding: 80px 40px;
+}
+
+.faq-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-label {
+    font-size: 21px;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.faq-heading {
+    font-size: 55px;
+    font-weight: 700;
+    color: #D4AE36;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.faq-intro {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.faq-email-link {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.faq-email-link:hover {
+    text-decoration: underline;
+}
+
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    border: 2px solid #e5e5e5;
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: #D4AE36;
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 21px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    background: #f9f9f9;
+}
+
+.faq-icon {
+    font-size: 14px;
+    color: #666;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 20px;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background: #fafafa;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 20px 30px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.faq-answer p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+}
+
 @media (max-width: 968px) {
     .content-wrapper {
         grid-template-columns: 1fr;
@@ -1047,5 +1162,30 @@ h1 {
 
     .testimonial-quote p {
         font-size: 14px;
+    }
+
+    .faq-section {
+        padding: 60px 20px;
+    }
+
+    .faq-heading {
+        font-size: 37px;
+    }
+
+    .faq-intro {
+        font-size: 16px;
+    }
+
+    .faq-question {
+        padding: 15px 20px;
+        font-size: 18px;
+    }
+
+    .faq-item.active .faq-answer {
+        padding: 15px 20px;
+    }
+
+    .faq-answer p {
+        font-size: 16px;
     }
 }

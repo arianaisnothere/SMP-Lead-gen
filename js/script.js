@@ -106,4 +106,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         e.target.value = value;
     });
+
+    // FAQ Accordion functionality
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const faqItem = this.parentElement;
+            const isActive = faqItem.classList.contains('active');
+
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // If the clicked item wasn't active, open it
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        });
+    });
 });
