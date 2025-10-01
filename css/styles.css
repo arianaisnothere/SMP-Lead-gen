@@ -394,6 +394,373 @@ h1 {
     transform: scale(1.05);
 }
 
+/* CTA Section */
+.cta-section {
+    background: white;
+    padding: 80px 40px;
+}
+
+.cta-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-heading {
+    color: #1a1a1a;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.cta-subheading {
+    color: #555;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #D4AE36;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 18px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(212, 174, 54, 0.3);
+    margin-bottom: 50px;
+}
+
+.cta-button:hover {
+    background: #c29d2f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(212, 174, 54, 0.4);
+}
+
+.smp-plan-box {
+    border: 3px solid #D4AE36;
+    border-radius: 20px;
+    padding: 50px 60px;
+    background: white;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.plan-heading {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.plan-heading .highlight {
+    color: #D4AE36;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 60px;
+}
+
+.feature-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.feature-icon {
+    font-size: 48px;
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-content h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.feature-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+}
+
+/* Promises Section */
+.promises-box {
+    border: 3px solid #D4AE36;
+    border-radius: 20px;
+    padding: 50px 60px;
+    background: white;
+    max-width: 1100px;
+    margin: 60px auto 0;
+}
+
+.promises-heading {
+    font-size: 36px;
+    font-weight: 700;
+    color: #22C55E;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.promises-subheading {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.promises-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.promise-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    padding: 30px;
+    border-radius: 15px;
+    border: 3px solid;
+    text-align: center;
+}
+
+.promise-green {
+    background: #F0FDF4;
+    border-color: #22C55E;
+}
+
+.promise-orange {
+    background: #FEF3C7;
+    border-color: #F59E0B;
+}
+
+.promise-icon {
+    font-size: 48px;
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.promise-content {
+    text-align: center;
+}
+
+.promise-content h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.promise-content p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #555;
+    margin: 0;
+}
+
+/* Long-term Support Section */
+.longterm-box {
+    border: 3px solid #D4AE36;
+    border-radius: 20px;
+    padding: 50px 60px;
+    background: white;
+    max-width: 1100px;
+    margin: 60px auto 0;
+}
+
+.longterm-heading {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.highlight-cyan {
+    color: #06B6D4;
+}
+
+.longterm-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.longterm-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 30px;
+    border-radius: 15px;
+    border: 3px solid #06B6D4;
+    background: #ECFEFF;
+}
+
+.longterm-icon {
+    font-size: 48px;
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.longterm-content h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.longterm-content p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #555;
+    margin: 0;
+}
+
+/* Free Bonuses Section */
+.bonuses-box {
+    border: 3px solid #D4AE36;
+    border-radius: 20px;
+    padding: 50px 60px;
+    background: white;
+    max-width: 1100px;
+    margin: 60px auto 0;
+}
+
+.bonuses-heading {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.highlight-orange {
+    color: #F59E0B;
+}
+
+.bonuses-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.bonus-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 30px;
+    border-radius: 15px;
+    border: 3px solid #F59E0B;
+    background: #FEF3C7;
+}
+
+.bonus-icon {
+    font-size: 48px;
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bonus-content h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.bonus-value {
+    color: #F59E0B;
+    font-weight: 700;
+}
+
+.bonus-content p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #555;
+    margin: 0;
+}
+
+/* Fast Action Bonus */
+.fast-action-bonus {
+    margin-top: 30px;
+    padding: 25px 35px;
+    background: #FCE7F3;
+    border: 3px dashed #EC4899;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.fast-action-bonus p {
+    margin: 0;
+    color: #1a1a1a;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.fast-action-bonus p:first-child {
+    color: #EC4899;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.lightning-icon {
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+/* Final CTA Button */
+.final-cta-button {
+    display: block;
+    background: #D4AE36;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 20px 50px;
+    border-radius: 50px;
+    text-decoration: none;
+    text-align: center;
+    margin: 50px auto 0;
+    max-width: 700px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(212, 174, 54, 0.4);
+}
+
+.final-cta-button:hover {
+    background: #c29d2f;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(212, 174, 54, 0.5);
+}
+
 @media (max-width: 968px) {
     .content-wrapper {
         grid-template-columns: 1fr;
@@ -451,5 +818,138 @@ h1 {
         flex-direction: column;
         gap: 20px;
         align-items: flex-start;
+    }
+
+    .cta-section {
+        padding: 60px 20px;
+    }
+
+    .cta-heading {
+        font-size: 32px;
+    }
+
+    .cta-subheading {
+        font-size: 16px;
+    }
+
+    .smp-plan-box {
+        padding: 30px 20px;
+    }
+
+    .plan-heading {
+        font-size: 28px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .feature-content h4 {
+        font-size: 18px;
+    }
+
+    .feature-content p {
+        font-size: 14px;
+    }
+
+    .promises-box {
+        padding: 30px 20px;
+        margin-top: 40px;
+    }
+
+    .promises-heading {
+        font-size: 28px;
+    }
+
+    .promises-subheading {
+        font-size: 20px;
+    }
+
+    .promises-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .promise-card {
+        padding: 20px;
+    }
+
+    .promise-content h4 {
+        font-size: 18px;
+    }
+
+    .promise-content p {
+        font-size: 14px;
+    }
+
+    .longterm-box {
+        padding: 30px 20px;
+        margin-top: 40px;
+    }
+
+    .longterm-heading {
+        font-size: 28px;
+    }
+
+    .longterm-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .longterm-card {
+        padding: 20px;
+    }
+
+    .longterm-content h4 {
+        font-size: 18px;
+    }
+
+    .longterm-content p {
+        font-size: 14px;
+    }
+
+    .bonuses-box {
+        padding: 30px 20px;
+        margin-top: 40px;
+    }
+
+    .bonuses-heading {
+        font-size: 28px;
+    }
+
+    .bonuses-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .bonus-card {
+        padding: 20px;
+    }
+
+    .bonus-content h4 {
+        font-size: 18px;
+    }
+
+    .bonus-content p {
+        font-size: 14px;
+    }
+
+    .fast-action-bonus {
+        padding: 20px;
+    }
+
+    .fast-action-bonus p:first-child {
+        font-size: 18px;
+    }
+
+    .fast-action-bonus p {
+        font-size: 14px;
+    }
+
+    .final-cta-button {
+        font-size: 18px;
+        padding: 18px 30px;
+        margin: 40px 20px 0;
     }
 }
