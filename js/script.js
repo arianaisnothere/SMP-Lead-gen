@@ -126,4 +126,199 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Testimonials Carousel functionality
+    (function() {
+        const container = document.getElementById('smpTestimonialsContainer');
+        const slides = document.querySelectorAll('.smp-testimonials-slide');
+        const prevBtn = document.getElementById('smpPrevBtn');
+        const nextBtn = document.getElementById('smpNextBtn');
+        const paginationContainer = document.getElementById('smpPagination');
+
+        if (!container || !slides.length || !prevBtn || !nextBtn) return;
+
+        let currentSlide = 0;
+        let currentCardIndex = 0;
+        const totalSlides = slides.length;
+        let isMobile = window.innerWidth <= 768;
+        let allCards = [];
+        let totalCards = 0;
+
+        function init() {
+            updateCardReferences();
+            createPaginationDots();
+            updateSlides();
+            setupListeners();
+            handleResponsive();
+        }
+
+        function updateCardReferences() {
+            allCards = [];
+            slides.forEach(slide => {
+                const cards = slide.querySelectorAll('.smp-testimonial-card');
+                cards.forEach(card => {
+                    allCards.push({
+                        card: card,
+                        slide: slide
+                    });
+                });
+            });
+            totalCards = allCards.length;
+        }
+
+        function createPaginationDots() {
+            paginationContainer.innerHTML = '';
+            allCards.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('smp-pagination-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToCard(index));
+                paginationContainer.appendChild(dot);
+            });
+        }
+
+        function updateSlides() {
+            if (isMobile) {
+                updateMobileView();
+            } else {
+                updateDesktopView();
+            }
+        }
+
+        function updateDesktopView() {
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                    slide.style.transform = 'translateX(0)';
+                } else {
+                    slide.classList.remove('active');
+                    if (index > currentSlide) {
+                        slide.style.transform = 'translateX(50px)';
+                    } else {
+                        slide.style.transform = 'translateX(-50px)';
+                    }
+                }
+            });
+        }
+
+        function updateMobileView() {
+            slides.forEach((slide, index) => {
+                if (allCards[currentCardIndex].slide === slide) {
+                    slide.classList.add('active');
+                    slide.style.transform = 'translateX(0)';
+                } else {
+                    slide.classList.remove('active');
+                    if (index > currentSlide) {
+                        slide.style.transform = 'translateX(50px)';
+                    } else {
+                        slide.style.transform = 'translateX(-50px)';
+                    }
+                }
+            });
+
+            allCards.forEach((item, index) => {
+                if (index === currentCardIndex) {
+                    item.card.classList.add('mobile-active');
+                } else {
+                    item.card.classList.remove('mobile-active');
+                }
+            });
+
+            const dots = paginationContainer.querySelectorAll('.smp-pagination-dot');
+            dots.forEach((dot, index) => {
+                if (index === currentCardIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function goToPrevSlide() {
+            if (isMobile) {
+                currentCardIndex = (currentCardIndex - 1 + totalCards) % totalCards;
+                currentSlide = Array.from(slides).findIndex(slide =>
+                    slide === allCards[currentCardIndex].slide
+                );
+            } else {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            }
+            updateSlides();
+        }
+
+        function goToNextSlide() {
+            if (isMobile) {
+                currentCardIndex = (currentCardIndex + 1) % totalCards;
+                currentSlide = Array.from(slides).findIndex(slide =>
+                    slide === allCards[currentCardIndex].slide
+                );
+            } else {
+                currentSlide = (currentSlide + 1) % totalSlides;
+            }
+            updateSlides();
+        }
+
+        function goToCard(index) {
+            currentCardIndex = index;
+            currentSlide = Array.from(slides).findIndex(slide =>
+                slide === allCards[currentCardIndex].slide
+            );
+            updateSlides();
+        }
+
+        function handleResponsive() {
+            const checkMobile = () => {
+                const wasMobile = isMobile;
+                isMobile = window.innerWidth <= 768;
+
+                if (wasMobile !== isMobile) {
+                    if (isMobile) {
+                        const firstCardInSlide = allCards.findIndex(item =>
+                            item.slide === slides[currentSlide]
+                        );
+                        currentCardIndex = firstCardInSlide >= 0 ? firstCardInSlide : 0;
+                    }
+                    updateSlides();
+                }
+            };
+
+            window.addEventListener('resize', checkMobile);
+            checkMobile();
+        }
+
+        function setupListeners() {
+            prevBtn.addEventListener('click', goToPrevSlide);
+            nextBtn.addEventListener('click', goToNextSlide);
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    goToPrevSlide();
+                } else if (e.key === 'ArrowRight') {
+                    goToNextSlide();
+                }
+            });
+
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            container.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+
+            container.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+
+            function handleSwipe() {
+                if (touchEndX < touchStartX - 50) {
+                    goToNextSlide();
+                } else if (touchEndX > touchStartX + 50) {
+                    goToPrevSlide();
+                }
+            }
+        }
+
+        init();
+    })();
 });

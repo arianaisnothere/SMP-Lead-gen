@@ -109,46 +109,123 @@
 
         <!-- Testimonials Section -->
         <section class="testimonials-section">
-            <div class="testimonials-container">
-                <h2 class="testimonials-heading">Check Out Our<br>Scalp Micropigmentation Results</h2>
+            <div class="smp-testimonials-wrapper">
+                <h2 class="smp-testimonials-title">Check Out Our<br>Scalp Micropigmentation Results</h2>
 
-                <div class="testimonials-slider">
-                    <div class="testimonial-card">
-                        <div class="before-after-image">
-                            <img src="images/before 1.1.png" alt="Before" class="before-img">
-                            <img src="images/after 1.1.png" alt="After" class="after-img">
-                            <span class="image-badge badge-before">Before</span>
-                            <span class="image-badge badge-after">After</span>
-                        </div>
-                        <p class="testimonial-text">I don't think about my hair anymore. I get dressed, get out of bed, and go to work, that's it. It looks so natural and so real! I just wish I had gotten it done sooner.</p>
-                        <p class="testimonial-author">— Travis</p>
+                <!-- Navigation arrows -->
+                <div class="smp-nav-arrows">
+                    <div class="smp-nav-arrow smp-prev" id="smpPrevBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                        </svg>
                     </div>
-
-                    <div class="testimonial-card">
-                        <div class="before-after-image">
-                            <img src="images/jessie-before-after.jpg" alt="Jessie Before and After">
-                            <span class="image-badge badge-before">Before</span>
-                            <span class="image-badge badge-after">After</span>
-                        </div>
-                        <p class="testimonial-text">It was amazing! Everything was all filled, it was like I never lost my hair. It looks so real. I couldn't believe it. I've seen other people's pictures and videos, but when you see it on yourself, it's really overwhelming</p>
-                        <p class="testimonial-author">— Jessie</p>
-                    </div>
-
-                    <div class="testimonial-card">
-                        <div class="before-after-image">
-                            <img src="images/brandon-before-after.jpg" alt="Brandon Before and After">
-                            <span class="image-badge badge-before">Before</span>
-                            <span class="image-badge badge-after">After</span>
-                        </div>
-                        <p class="testimonial-text">It feels amazing to be honest. I walk around the street with higher confidence. My advice is just go for it. The results are guaranteed, you're going to be happier, and feel like a whole new person.</p>
-                        <p class="testimonial-author">— Brandon</p>
+                    <div class="smp-nav-arrow smp-next" id="smpNextBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                        </svg>
                     </div>
                 </div>
 
-                <div class="slider-controls">
-                    <button class="slider-arrow slider-arrow-prev" aria-label="Previous testimonial">‹</button>
-                    <button class="slider-arrow slider-arrow-next" aria-label="Next testimonial">›</button>
+                <div class="smp-testimonials-container" id="smpTestimonialsContainer">
+                    <!-- First slide -->
+                    <div class="smp-testimonials-slide active" id="smpSlide1">
+                        <div class="smp-testimonial-card mobile-active">
+                            <div class="smp-testimonial-images">
+                                <div class="smp-testimonial-image-wrapper">
+                                    <img src="images/before1.webp" alt="Travis before" class="smp-testimonial-image">
+                                    <span class="smp-testimonial-label smp-before-label">Before</span>
+                                </div>
+                                <div class="smp-testimonial-image-wrapper">
+                                    <img src="images/after 1.1.png" alt="Travis after" class="smp-testimonial-image">
+                                    <span class="smp-testimonial-label smp-after-label">After</span>
+                                </div>
+                            </div>
+                            <p class="smp-testimonial-text">I don't think about my hair anymore. I get dressed, get out of bed, and go to work, that's it. It looks so natural and so real! I just wish I had gotten it done sooner.</p>
+                            <p class="smp-testimonial-author">— Travis</p>
+                        </div>
+
+                        <div class="smp-testimonial-card">
+                            <div class="smp-testimonial-images">
+                                <div class="smp-testimonial-image-wrapper">
+                                    <img src="images/before2.webp" alt="Jessie before" class="smp-testimonial-image">
+                                    <span class="smp-testimonial-label smp-before-label">Before</span>
+                                </div>
+                                <div class="smp-testimonial-image-wrapper">
+                                    <img src="images/after2.webp" alt="Jessie after" class="smp-testimonial-image">
+                                    <span class="smp-testimonial-label smp-after-label">After</span>
+                                </div>
+                            </div>
+                            <p class="smp-testimonial-text">It was amazing! Everything was all filled, it was like I never lost my hair. It looks so real. I couldn't believe it. I've seen other people's pictures and videos, but when you see it on yourself, it's really overwhelming</p>
+                            <p class="smp-testimonial-author">— Jessie</p>
+                        </div>
+
+                        <div class="smp-testimonial-card">
+                            <div class="smp-testimonial-images">
+                                <div class="smp-testimonial-image-wrapper">
+                                    <img src="images/before3.webp" alt="Brandon before" class="smp-testimonial-image">
+                                    <span class="smp-testimonial-label smp-before-label">Before</span>
+                                </div>
+                                <div class="smp-testimonial-image-wrapper">
+                                    <img src="images/after3.webp" alt="Brandon after" class="smp-testimonial-image">
+                                    <span class="smp-testimonial-label smp-after-label">After</span>
+                                </div>
+                            </div>
+                            <p class="smp-testimonial-text">It feels amazing to be honest. I walk around the street with higher confidence. My advice is just go for it. The results are guaranteed, you're going to be happier, and feel like a whole new person.</p>
+                            <p class="smp-testimonial-author">— Brandon</p>
+                        </div>
+                    </div>
+
+                    <!-- Second slide -->
+                    <div class="smp-testimonials-slide" id="smpSlide2">
+                        <div class="smp-testimonial-card mobile-active">
+                            <div class="smp-testimonial-images">
+                                <div class="smp-testimonial-image-wrapper">
+                                    <img src="images/b4 .png" alt="Sara before" class="smp-testimonial-image">
+                                    <span class="smp-testimonial-label smp-before-label">Before</span>
+                                </div>
+                                <div class="smp-testimonial-image-wrapper">
+                                    <img src="images/a44.png" alt="Sara after" class="smp-testimonial-image">
+                                    <span class="smp-testimonial-label smp-after-label">After</span>
+                                </div>
+                            </div>
+                            <p class="smp-testimonial-text">The transformation has been incredible. I was hesitant at first, but now I can't imagine not having done it. Everyone says I look years younger!</p>
+                            <p class="smp-testimonial-author">— Sara</p>
+                        </div>
+
+                        <div class="smp-testimonial-card">
+                            <div class="smp-testimonial-images">
+                                <div class="smp-testimonial-image-wrapper">
+                                    <img src="images/b5.png" alt="John before" class="smp-testimonial-image">
+                                    <span class="smp-testimonial-label smp-before-label">Before</span>
+                                </div>
+                                <div class="smp-testimonial-image-wrapper">
+                                    <img src="images/a5.png" alt="John after" class="smp-testimonial-image">
+                                    <span class="smp-testimonial-label smp-after-label">After</span>
+                                </div>
+                            </div>
+                            <p class="smp-testimonial-text">As a woman dealing with hair loss, I was devastated. This treatment gave me back my confidence and completely changed how I feel about myself each day.</p>
+                            <p class="smp-testimonial-author">— John</p>
+                        </div>
+
+                        <div class="smp-testimonial-card">
+                            <div class="smp-testimonial-images">
+                                <div class="smp-testimonial-image-wrapper">
+                                    <img src="images/b6.png" alt="Robert before" class="smp-testimonial-image">
+                                    <span class="smp-testimonial-label smp-before-label">Before</span>
+                                </div>
+                                <div class="smp-testimonial-image-wrapper">
+                                    <img src="images/a6.png" alt="Robert after" class="smp-testimonial-image">
+                                    <span class="smp-testimonial-label smp-after-label">After</span>
+                                </div>
+                            </div>
+                            <p class="smp-testimonial-text">I tried medications and other treatments for years with no success. This was the only solution that actually delivered on its promises. Worth every penny.</p>
+                            <p class="smp-testimonial-author">— Robert</p>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Pagination for mobile -->
+                <div class="smp-testimonials-pagination" id="smpPagination"></div>
             </div>
         </section>
 
@@ -341,6 +418,8 @@
                         <p>"I found out about SMP online, knew that I instantly wanted it done. I did a lot of research on finding a good artist. I came across Victor and the rest was history. He made the whole process seamless and made me feel very comfortable. I couldn't be happier with the results. I almost chickened out but I'm so glad I didn't. If you're on the fence about it, DO IT. I highly recommend you go to Victor because he's been doing it for 8 years and his craftsmanship shows."</p>
                         <p class="quote-author">— Alex Damron, <a href="https://www.google.com/maps/contrib/103932834913722269512/place/ChIJ-VUMe2ErU4gRCPWi4STmYV0/@34.3017285,-85.011547,4500864m/data=!3m1!1e3!4m6!1m5!8m4!1e1!2s103932834913722269512!3m1!1e1?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDkyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="review-link">See Review Here</a></p>
                     </div>
+
+                    <a href="#" class="look-younger-cta">Book Your Free SMP Preview Today</a>
                 </div>
             </div>
         </section>
